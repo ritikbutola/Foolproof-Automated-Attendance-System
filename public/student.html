@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+    <p id="timer"></p>
+
+    <div class="top-right-corner">
+        <span class="handwritten-text">Welcome, Students!</span>
+    </div>
+
+    <h1>STUDENTS DATA</h1>
+    <table id="customers">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Rollno</th>
+        </tr>
+    </table>
+
+
+    <script>
+        let table = document.getElementById('customers');
+        let data = [['Ritik', 'BTECH', '1918156'],
+                ['ABC', 'BTECH', '1918190'],
+                ['DEF', 'BTECH', '1918199'],
+                ['GHI', 'BTECH', '1918156'],
+                ['JKL', 'BTECH', '1918156'],
+                ['MNO', 'BTECH', '1918123'],
+                ['PQR', 'BTECH', '1918111']]
+
+        for (let i = 0; i < data.length; i++) {
+            table.innerHTML += `<tr>
+                <td>${data[i][0]}</td>
+                <td>${data[i][1]}</td>
+                <td>${data[i][2]}</td>
+            </tr>`;
+        }
+
+        // Timer code
+    const urlParams = new URLSearchParams(window.location.search);
+    const timerDuration = urlParams.get('timer');
+
+    if (timerDuration) {
+      let timeLeft = parseInt(timerDuration);
+
+      const timerInterval = setInterval(() => {
+        document.getElementById('timer').textContent = `Time left: ${timeLeft} seconds`;
+
+        if (timeLeft === 0) {
+          console.log("Timer ended.");
+          clearInterval(timerInterval);
+          window.location.href="index.html";
+        }
+
+        timeLeft--;
+      }, 1000);
+    }
+
+
+    </script>
+
+
+    <video id="video" width="600" height="400" autoplay style="border:2px solid black;"></video>
+
+
+    <h1>ATTENDANCE SHEET</h1>
+
+
+    <table id="attendanceSheet">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Rollno</th>
+        </tr>
+
+    </table>
+</body>
+
+</html>

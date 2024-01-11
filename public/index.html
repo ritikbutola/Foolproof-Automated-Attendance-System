@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+
+        <!-- <p class="logo">FACE RECOGNITION ZONE</p> -->
+
+        <script>
+            var manubtn = document.getElementById("manubtn")
+            var navbar = document.getElementById("navbar")
+            var menu = document.getElementById("menu")
+
+            manubtn.onclick = function () {
+                if (navbar.style.right == "-250px") {
+                    navbar.style.right = "0";
+                }
+                else {
+                    navbar.style.right = "-250px";
+                }
+            }
+        </script>
+        <main>
+            <section>
+                <h3>FACE RECOGNITION ATTENDENCE SYSTEM</h3>
+            
+                <!-- <a href="faculty.html" class="button1">FACULTY</a> -->
+                <!-- <a href="student.html" class="button2">STUDENT</a> -->
+
+                <h1 id="school">Graphic Era Hill University </h1>
+
+                <div class="login" >
+                    <div class="image">
+                        <img src="dummy-background.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <h2 class="login_head">Faculty login </h2>
+                        <form action="" id="form">
+                            <input type="text" id="name" placeholder="username">
+                            <input type="password" id="password" placeholder="Password">
+                            
+                                <input type="submit" class="btn btn-warning" id="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        
+
+    </header>
+    <script src="index.js"></script>
+</body>
+
+</html>

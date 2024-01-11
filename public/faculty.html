@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Page</title>
+    <link rel="stylesheet" href="faculty.css">
+</head>
+
+<body>
+    <header>
+        <h1>STUDENTS DATA</h1>
+        <table id="customers">
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Rollno</th>
+            </tr>
+        </table>
+        <button onclick="startClass()">START ATTENDANCE</button>
+        <a href="student.html?timer=60" id="studentLink" style="display:none;">GO TO STUDENT PAGE</a>
+
+        <script>
+            let table = document.getElementById('customers');
+            let data = [
+                ['Ritik', 'BTECH', '1918156'],
+                ['ABC', 'BTECH', '1918190'],
+                ['DEF', 'BTECH', '1918199'],
+                ['GHI', 'BTECH', '1918156'],
+                ['JKL', 'BTECH', '1918156'],
+                ['MNO', 'BTECH', '1918123'],
+                ['PQR', 'BTECH', '1918111']
+            ]
+
+            for (let i = 0; i < data.length; i++) {
+                table.innerHTML += `<tr>
+                    <td>${data[i][0]}</td>
+                    <td>${data[i][1]}</td>
+                    <td>${data[i][2]}</td>
+                </tr>`
+                console.log(data[i][0] + data[i][2]);
+            }
+
+            let timerInterval;
+
+            function startClass() {
+                let timerDurationInSeconds = 60; // Adjust the timer duration as needed
+                startTimer(timerDurationInSeconds);
+                document.getElementById('studentLink').style.display = 'inline';
+            }
+
+            function startTimer(durationInSeconds) {
+                let timeLeft = durationInSeconds;
+
+                timerInterval = setInterval(() => {
+                    console.log(`Time left: ${timeLeft} seconds`);
+
+                    if (timeLeft === 0) {
+                        console.log("Timer ended.");
+                        clearInterval(timerInterval);
+                    }
+
+                    timeLeft--;
+                }, 1000);
+            }
+        </script>
+    </header>
+</body>
+
+</html>
+
+
